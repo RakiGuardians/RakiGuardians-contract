@@ -915,7 +915,7 @@ contract RakiGuardians is ERC20, Ownable {
     bool public _renounceMaxUpdateFunctions = false;
     bool public _renounceWalletChanges = false;
 
-    bool public directLiquidityInjectionEnabled = false;
+    bool public directLiquidityInjectionEnabled = true;
     bool public swapAndLiquifyEnabled = false;
     bool public sellDelayActive = false;
     bool public tradingActive = false;
@@ -1033,7 +1033,7 @@ contract RakiGuardians is ERC20, Ownable {
         sellTeamWallet = 50;
         sellDevMarketingWallet = 250;
         sellBurn = 0;
-        sellFeesTotal + sellLiquidity + (sellTeamWallet * 3) + sellDevMarketingWallet + sellBurn;
+        sellFeesTotal = sellLiquidity + (sellTeamWallet * 3) + sellDevMarketingWallet + sellBurn;
 
         maxWallet = 2;
         walletSellDelayTime = 180;
